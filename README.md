@@ -1,2 +1,2 @@
 # CompuTED
- 
+Official TED Team 

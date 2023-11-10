@@ -14,9 +14,9 @@ module alu(
     output[31:0] RESULT
     );
     
-    wire[31:0] a_and_b;
-    wire[31:0] a_or_b;
-    wire[31:0] not_b;
+    wire[31:0] A_and_B;
+    wire[31:0] A_or_B;
+    wire[31:0] not_B;
     wire[31:0] mux;
     
     wire[31:0] arithmatic;
@@ -26,16 +26,16 @@ module alu(
     wire and_or_or              = ALU_CONTROL[1];
     wire arithmatic_or_logical  = ALU_CONTROL[2];
     
-    assign a_and_b      = A & B;
-    assign a_or_b       = A | B;
-    assign not_b        = ~B;
-    assign mux          = (add_or_sub  == 1'b0) ? B : not_b;
+    assign A_and_B      = A & B;
+    assign A_or_B       = A | B;
+    assign not_B        = ~B;
+    assign mux          = (add_or_sub  == 1'b0) ? B : not_B;
     
     // when sub is being performed mux becomes ~B,
     // because of the nature of 2's compliment ~B equals -B - 1
     // thus subtraction can be written as A - B => A + (-B) => A + (~B + 1) => A + ~B + 1
     assign arithmatic   = A + mux + add_or_sub ;
-    assign logical      = (and_or_or == 1'b0) ? a_and_b : a_or_b;
+    assign logical      = (and_or_or == 1'b0) ? A_and_B : A_or_B;
     
     assign RESULT = (arithmatic_or_logical == 1'b0) ? arithmatic : logical;
     

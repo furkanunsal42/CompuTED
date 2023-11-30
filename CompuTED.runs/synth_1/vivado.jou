@@ -1,13 +1,14 @@
 #-----------------------------------------------------------
-# Vivado v2021.2 (64-bit)
-# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
-# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Fri Nov 10 05:25:53 2023
-# Process ID: 20988
-# Current directory: C:/dev/CompuTED/CompuTED/CompuTED.runs/synth_1
-# Command line: vivado.exe -log core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source core.tcl
-# Log file: C:/dev/CompuTED/CompuTED/CompuTED.runs/synth_1/core.vds
-# Journal file: C:/dev/CompuTED/CompuTED/CompuTED.runs/synth_1\vivado.jou
-# Running On: DESKTOP-21DM0TK, OS: Windows, CPU Frequency: 3394 MHz, CPU Physical cores: 16, Host memory: 34281 MB
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Nov 30 23:33:25 2023
+# Process ID: 5136
+# Current directory: C:/dev/CompuTED/CompuTED.runs/synth_1
+# Command line: vivado.exe -log DataMemoryTest.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DataMemoryTest.tcl
+# Log file: C:/dev/CompuTED/CompuTED.runs/synth_1/DataMemoryTest.vds
+# Journal file: C:/dev/CompuTED/CompuTED.runs/synth_1\vivado.jou
+# Running On: FurkanLaptop, OS: Windows, CPU Frequency: 1797 MHz, CPU Physical cores: 16, Host memory: 16521 MB
 #-----------------------------------------------------------
-source core.tcl -notrace
+source DataMemoryTest.tcl -notrace

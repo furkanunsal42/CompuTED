@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module InstructionMemory(PC, Instruction);
+module InstructionMemory(Instruction, PC);
     input[31:0] PC;
     output reg[31:0] Instruction;
     

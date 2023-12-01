@@ -2,9 +2,9 @@ module RegisterFile(RD1, RD2, A1, A2, A3, WD3, clk, WE3);
 output reg[31:0] RD1;
 output reg[31:0] RD2;
 
-input[25:21] A1;
-input[20:16] A2;
-input[15:11] A3;
+input[5:0] A1;
+input[5:0] A2;
+input[5:0] A3;
 
 input clk;
 input[31:0] WD3;

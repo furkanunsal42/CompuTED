@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 
-module DataMemoryTest();
+module MemoryTest();
     
     wire[31:0] RD; 
     reg[31:0] A, WD; 
     reg WE, clk = 0;
     
-    DataMemory #(.MEMORY_SIZE(512)) dut (RD, A, WD, WE, clk);
+    Memory #(.MEMORY_SIZE(512)) dut (RD, A, WD, WE, clk);
     
     always begin
         #10

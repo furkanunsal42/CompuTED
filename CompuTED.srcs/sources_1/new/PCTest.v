@@ -6,7 +6,7 @@ module PCTest();
     reg clk = 0, PCSrc;
     reg[31:0] PCBranch;
     wire[31:0] PC;
-    PC dut(clk, PCSrc, PCBranch, PC);
+    PC dut(PC, PCBranch, clk, PCSrc);
     
     always begin
         #10

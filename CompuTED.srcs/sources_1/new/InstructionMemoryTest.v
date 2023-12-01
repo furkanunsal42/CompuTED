@@ -4,7 +4,7 @@ module InstructionMemoryTest();
     
     reg[31:0] PC;
     wire[31:0] instruction;
-    InstructionMemory dut(PC, instruction);
+    InstructionMemory dut(instruction, PC);
     
     initial begin
     

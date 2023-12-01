@@ -1,4 +1,4 @@
-module PC (clk, PCSrc, PCBranch, PC);
+module PC (PC, PCBranch, clk, PCSrc);
 input clk;
 input PCSrc;
 input[31:0] PCBranch;

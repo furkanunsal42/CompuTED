@@ -32,3 +32,4 @@ CompuTED.sim/sim_1/behav/xsim/xsim.dir/ALUTest_behav/obj/xsim_1.c
 *.sdb
 vivado.log
 vivado.jou
+CompuTED.hw/CompuTED.lpr

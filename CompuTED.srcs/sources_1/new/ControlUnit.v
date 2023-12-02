@@ -13,118 +13,118 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
     output reg RegWrite;
     
     wire[5:0] instruction_id;
-    assign instruction_id = Opcode == 5'b0 ? Function : Opcode;
+    assign instruction_id = Opcode == 6'b0 ? Function : Opcode;
     
-    always @(Opcode, Function)begin
+    always @(instruction_id)begin
         case(instruction_id)
-            001000:     //addi
+            6'b001000:     //addi
             begin
                 MemToReg = 0;
                 MemWrite = 0;
                 Branch = 0;
                 ALUControl = 2'b00;
                 AluSrc = 1;
-                RegDst = 1;
+                RegDst = 0;
                 RegWrite = 1;
             end
             
-            100000:     //add
+            6'b100000:     //add
             begin
                 MemToReg = 0;
                 MemWrite = 0;
                 Branch = 0;
                 ALUControl = 2'b00;
                 AluSrc = 0;
-                RegDst = 0;
+                RegDst = 1;
                 RegWrite = 1;
             end
             
-            100010:     //sub
+            6'b100010:     //sub
             begin
                 MemToReg = 0;
                 MemWrite = 0;
                 Branch = 0;
                 ALUControl = 2'b01;
                 AluSrc = 0;
-                RegDst = 0;
+                RegDst = 1;
                 RegWrite = 1;
             end
             
-            100100:     //and
+            6'b100100:     //and
             begin
                 MemToReg = 0;
                 MemWrite = 0;
                 Branch = 0;
                 ALUControl = 2'b10;
                 AluSrc = 0;
-                RegDst = 0;
+                RegDst = 1;
                 RegWrite = 1;
             end
             
-            100101:     //or
+            6'b100101:     //or
             begin
                 MemToReg = 0;
                 MemWrite = 0;
                 Branch = 0;
                 ALUControl = 2'b11;
                 AluSrc = 0;
-                RegDst = 0;
+                RegDst = 1;
                 RegWrite = 1;
             end
             
-            100011:     //lw
+            6'b100011:     //lw
             begin
                 MemToReg = 1;
                 MemWrite = 0;
                 Branch = 0;
-                ALUControl = 2'b00; // CHECK
-                AluSrc = 0;         // CHECK
-                RegDst = 0;         // CHECK
+                ALUControl = 2'b00; 
+                AluSrc = 1;         
+                RegDst = 0;         
                 RegWrite = 1;
             end
             
-            101011:     //sw
+            6'b101011:     //sw
             begin
                 MemToReg = 0;
                 MemWrite = 1;
                 Branch = 0;
-                ALUControl = 2'b00; // CHECK
-                AluSrc = 0;         // CHECK                 
-                RegDst = 0;         // CHECK
+                ALUControl = 2'b00; 
+                AluSrc = 1;                          
+                RegDst = 0;         
                 RegWrite = 0;
             end
             
-            000100:     //beq
+            6'b000100:     //beq
             begin
                 MemToReg = 0;
                 MemWrite = 0;
                 Branch = 1;
                 ALUControl = 2'b01; // CHECK
                 AluSrc = 0;         // CHECK                 
-                RegDst = 0;         // CHECK
+                RegDst = 1;         // CHECK
                 RegWrite = 0;
             end
             
-            000010:     //j
+            6'b000010:     //j
             begin
                 MemToReg = 0;
                 MemWrite = 0;
                 Branch = 1;
                 ALUControl = 2'b10; // CHECK
                 AluSrc = 1;         // CHECK                 
-                RegDst = 0;         // CHECK
+                RegDst = 1;         // CHECK
                 RegWrite = 0;
             end
             
             default:
             begin
-                MemToReg = 0;
-                MemWrite = 0;
-                Branch = 0;
-                ALUControl = 2'b00; // CHECK
-                AluSrc = 0;         // CHECK                 
-                RegDst = 0;         // CHECK
-                RegWrite = 0;
+                MemToReg = 1'bX;
+                MemWrite = 1'bX;
+                Branch = 1'bX;
+                ALUControl = 2'bXX; 
+                AluSrc = 1'bX;                         
+                RegDst = 1'bX;         
+                RegWrite = 1'bX;
             end
             
             

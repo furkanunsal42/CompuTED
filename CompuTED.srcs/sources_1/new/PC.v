@@ -1,8 +1,11 @@
-module PC (PC, PCBranch, clk, PCSrc);
+module PC (PC, SignImm, clk, PCSrc);
 input clk;
 input PCSrc;
-input[31:0] PCBranch;
+input[31:0] SignImm;
 output reg[31:0] PC;
+
+wire[31:0] PCBranch;
+assign PCBranch = (SignImm << 2) + PC + 4;
 
 initial begin
     PC = 32'd0;

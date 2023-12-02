@@ -33,3 +33,9 @@ CompuTED.sim/sim_1/behav/xsim/xsim.dir/ALUTest_behav/obj/xsim_1.c
 vivado.log
 vivado.jou
 CompuTED.hw/CompuTED.lpr
+*.rlx
+*.rtti
+*.type
+*.c
+CompuTED.runs/synth_1/__synthesis_is_complete__
+*.db

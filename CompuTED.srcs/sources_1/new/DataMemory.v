@@ -8,6 +8,13 @@ module Memory #(parameter MEMORY_SIZE = 8192)(RD, A, WD, WE, clk);
     
     reg[7:0] MemoryData[MEMORY_SIZE-1:0];
     
+    integer i;
+    initial begin
+        for(i = 0; i <= MEMORY_SIZE-1; i = i + 1) begin
+            MemoryData[i] = 8'd0;
+        end
+    end
+    
     always @(posedge clk) begin
         if(WE == 1'b1) begin
             MemoryData[A+0] = WD[7:0];

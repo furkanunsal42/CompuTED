@@ -19,10 +19,10 @@ module InstructionMemory(Instruction, PC);
         Memory[10'd5]   = 32'h02114025;   //or $t0, $s0,$s1
         Memory[10'd6]   = 32'h8e09000a;   //back: lw $t1, 10($s0) 100011,10000,01001,0000000000001010
         Memory[10'd7]   = 32'hae29000a;   //next: sw $t1, 10($s1)
-        //Memory[10'd9]   = 32'h1211fffd;   //beq $s0,$s1,back
-        Memory[10'd8]  = 32'h2010000f;   //addi $s0, $0,15
-        //Memory[10'd11]  = 32'h1211fffb;   //beq $s0,$s1,back
-        Memory[10'd9]  = 32'h08100007;   //j next
+        Memory[10'd9]   = 32'h1211fffd;   //beq $s0,$s1,back
+        Memory[10'd8]   = 32'h2010000f;   //addi $s0, $0,15
+        Memory[10'd11]  = 32'h1211fffb;   //beq $s0,$s1,back
+        Memory[10'd9]   = 32'h08100007;   //j next
     end
     
 endmodule

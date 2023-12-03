@@ -39,3 +39,4 @@ CompuTED.hw/CompuTED.lpr
 *.c
 CompuTED.runs/synth_1/__synthesis_is_complete__
 *.db
+*.rpx

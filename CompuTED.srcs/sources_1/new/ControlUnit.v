@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWrite, Opcode, Function);
+module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWrite, Jump, Opcode, Function);
     input[5:0] Opcode;
     input[5:0] Function;
     
@@ -11,6 +11,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
     output reg AluSrc;  // 0 for register, 1 for immidiate
     output reg RegDst;  // 0 for rd,       1 for rt
     output reg RegWrite;
+    output reg Jump;
     
     wire[5:0] instruction_id;
     assign instruction_id = Opcode == 6'b0 ? Function : Opcode;
@@ -26,6 +27,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 1;
                 RegDst = 0;
                 RegWrite = 1;
+                Jump = 0;
             end
             
             6'b100000:     //add
@@ -37,6 +39,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 0;
                 RegDst = 1;
                 RegWrite = 1;
+                Jump = 0;
             end
             
             6'b100010:     //sub
@@ -48,6 +51,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 0;
                 RegDst = 1;
                 RegWrite = 1;
+                Jump = 0;
             end
             
             6'b100100:     //and
@@ -59,6 +63,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 0;
                 RegDst = 1;
                 RegWrite = 1;
+                Jump = 0;
             end
             
             6'b100101:     //or
@@ -70,6 +75,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 0;
                 RegDst = 1;
                 RegWrite = 1;
+                Jump = 0;
             end
             
             6'b100011:     //lw
@@ -81,6 +87,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 1;         
                 RegDst = 0;         
                 RegWrite = 1;
+                Jump = 0;
             end
             
             6'b101011:     //sw
@@ -92,6 +99,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 1;                          
                 RegDst = 0;         
                 RegWrite = 0;
+                Jump = 0;
             end
             
             6'b000100:     //beq
@@ -103,6 +111,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 0;         // CHECK                 
                 RegDst = 1;         // CHECK
                 RegWrite = 0;
+                Jump = 0;
             end
             
             6'b000010:     //j
@@ -114,6 +123,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 1;         // CHECK                 
                 RegDst = 1;         // CHECK
                 RegWrite = 0;
+                Jump = 1;
             end
             
             default:
@@ -125,6 +135,7 @@ module ControlUnit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWr
                 AluSrc = 1'bX;                         
                 RegDst = 1'bX;         
                 RegWrite = 1'bX;
+                Jump = 1'b0;
             end
             
             

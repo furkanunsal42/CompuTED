@@ -12,9 +12,15 @@ module CPU();
     
     wire  ZeroFlag; // ALU
     wire  Branch;   // ControlUnit
+    wire  Jump;     // ControlUnit
+
+    wire[31:0] PCBranch;
+    
+    assign PCBranch = Jump ? {{6{Instruction[25]}}, Instruction[25:0]} : SignImm;
+
     assign PCSrc = ZeroFlag & Branch;
     
-    PC program_counter(PC, SignImm, clk, PCSrc);
+    PC program_counter(PC, Jump, PCBranch, clk, PCSrc);
 
     InstructionMemory instruction_memory(Instruction, PC);
     
@@ -25,13 +31,12 @@ module CPU();
     wire  RegDst;
     wire  RegWrite;
     
-    
     wire [5:0] Opcode;
     wire [5:0] Function;
     assign Opcode = Instruction[31:26];
     assign Function = Instruction[5:0];
     
-    ControlUnit control_unit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWrite, Opcode, Function);
+    ControlUnit control_unit(MemToReg, MemWrite, Branch, ALUControl, AluSrc, RegDst, RegWrite, Jump, Opcode, Function);
     
     wire [31:0] RD1;
     wire [31:0] RD2;
@@ -59,14 +64,7 @@ module CPU();
     
     Memory #(.MEMORY_SIZE(128)) memory(MemoryOut, ALUResult, RD2, MemWrite, clk);
     
-    //always begin
-    //    #1
-    //    clk = ~clk;
-    //end
-    
     reg reset;
-    reg jump;
-    
     always begin
         #5 clk = ~clk;
     end

@@ -11,7 +11,7 @@ module Memory #(parameter MEMORY_SIZE = 8192)(RD, A, WD, WE, clk);
     integer i;
     initial begin
         for(i = 0; i <= MEMORY_SIZE-1; i = i + 1) begin
-            MemoryData[i] = 8'd0;
+            MemoryData[i] = i;
         end
     end
     

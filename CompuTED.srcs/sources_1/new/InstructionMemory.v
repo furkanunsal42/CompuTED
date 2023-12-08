@@ -12,7 +12,7 @@ module InstructionMemory(Instruction, PC);
     
     initial begin
         Memory[10'd0]   = 32'h2010000a;   //addi $s0,$0,10  
-        Memory[10'd1]   = 32'h2011000f;   //addi $l,$0,15  
+        Memory[10'd1]   = 32'h2011000f;   //addi $sl,$0,15  
         Memory[10'd2]   = 32'h02114020;   //add $t0, $s0,$s1
         Memory[10'd3]   = 32'h02304022;   //sub $t0,$s1,$s0
         Memory[10'd4]   = 32'h02114024;   //and $t0, $s0,$s1
@@ -21,8 +21,8 @@ module InstructionMemory(Instruction, PC);
         Memory[10'd7]   = 32'hae29000a;   //next: sw $t1, 10($s1)
         Memory[10'd9]   = 32'h1211fffd;   //beq $s0,$s1,back
         Memory[10'd8]   = 32'h2010000f;   //addi $s0, $0,15
-        Memory[10'd11]  = 32'h1211fffb;   //beq $s0,$s1,back
-        Memory[10'd9]   = 32'h08100007;   //j next
+        Memory[10'd9]   = 32'h1211fffb;   //beq $s0,$s1,back
+        Memory[10'd10]  = 32'h08100007;   //j next
     end
     
 endmodule

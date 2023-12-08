@@ -3,137 +3,104 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="CPU_behav.wdb" id="1">
+      <db_ref path="CoreTest_behav.wdb" id="1">
          <top_modules>
-            <top_module name="CPU" />
+            <top_module name="CoreTest" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="142.755 ns"></ZoomEndTime>
-      <Cursor1Time time="0.000 ns"></Cursor1Time>
+      <ZoomEndTime time="147.201 ns"></ZoomEndTime>
+      <Cursor1Time time="97.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="180"></NameColumnWidth>
-      <ValueColumnWidth column_width="131"></ValueColumnWidth>
+      <ValueColumnWidth column_width="115"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="29" />
-   <wvobject fp_name="/CPU/clk" type="logic">
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/CoreTest/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/PC" type="array">
+   <wvobject fp_name="/CoreTest/PC" type="array">
       <obj_property name="ElementShortName">PC[31:0]</obj_property>
       <obj_property name="ObjectShortName">PC[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/PCSrc" type="logic">
+   <wvobject fp_name="/CoreTest/PCSrc" type="logic">
       <obj_property name="ElementShortName">PCSrc</obj_property>
       <obj_property name="ObjectShortName">PCSrc</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/Instruction" type="array">
+   <wvobject fp_name="/CoreTest/Instruction" type="array">
       <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
       <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/SignImm" type="array">
+   <wvobject fp_name="/CoreTest/SignImm" type="array">
       <obj_property name="ElementShortName">SignImm[31:0]</obj_property>
       <obj_property name="ObjectShortName">SignImm[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/ZeroFlag" type="logic">
-      <obj_property name="ElementShortName">ZeroFlag</obj_property>
-      <obj_property name="ObjectShortName">ZeroFlag</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/Branch" type="logic">
+   <wvobject fp_name="/CoreTest/Branch" type="logic">
       <obj_property name="ElementShortName">Branch</obj_property>
       <obj_property name="ObjectShortName">Branch</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/Jump" type="logic">
+   <wvobject fp_name="/CoreTest/Jump" type="logic">
       <obj_property name="ElementShortName">Jump</obj_property>
       <obj_property name="ObjectShortName">Jump</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/PCBranch" type="array">
+   <wvobject fp_name="/CoreTest/PCBranch" type="array">
       <obj_property name="ElementShortName">PCBranch[31:0]</obj_property>
       <obj_property name="ObjectShortName">PCBranch[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/MemToReg" type="logic">
+   <wvobject fp_name="/CoreTest/MemToReg" type="logic">
       <obj_property name="ElementShortName">MemToReg</obj_property>
       <obj_property name="ObjectShortName">MemToReg</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/MemWrite" type="logic">
+   <wvobject fp_name="/CoreTest/MemWrite" type="logic">
       <obj_property name="ElementShortName">MemWrite</obj_property>
       <obj_property name="ObjectShortName">MemWrite</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/ALUControl" type="array">
+   <wvobject fp_name="/CoreTest/ALUControl" type="array">
       <obj_property name="ElementShortName">ALUControl[1:0]</obj_property>
       <obj_property name="ObjectShortName">ALUControl[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/AluSrc" type="logic">
+   <wvobject fp_name="/CoreTest/AluSrc" type="logic">
       <obj_property name="ElementShortName">AluSrc</obj_property>
       <obj_property name="ObjectShortName">AluSrc</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/RegDst" type="logic">
+   <wvobject fp_name="/CoreTest/RegDst" type="logic">
       <obj_property name="ElementShortName">RegDst</obj_property>
       <obj_property name="ObjectShortName">RegDst</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/RegWrite" type="logic">
+   <wvobject fp_name="/CoreTest/RegWrite" type="logic">
       <obj_property name="ElementShortName">RegWrite</obj_property>
       <obj_property name="ObjectShortName">RegWrite</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/Opcode" type="array">
+   <wvobject fp_name="/CoreTest/Opcode" type="array">
       <obj_property name="ElementShortName">Opcode[5:0]</obj_property>
       <obj_property name="ObjectShortName">Opcode[5:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/Function" type="array">
+   <wvobject fp_name="/CoreTest/Function" type="array">
       <obj_property name="ElementShortName">Function[5:0]</obj_property>
       <obj_property name="ObjectShortName">Function[5:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/RD1" type="array">
-      <obj_property name="ElementShortName">RD1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">RD1[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/RD2" type="array">
-      <obj_property name="ElementShortName">RD2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">RD2[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/A1" type="array">
-      <obj_property name="ElementShortName">A1[5:0]</obj_property>
-      <obj_property name="ObjectShortName">A1[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/A2" type="array">
-      <obj_property name="ElementShortName">A2[5:0]</obj_property>
-      <obj_property name="ObjectShortName">A2[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/A3" type="array">
-      <obj_property name="ElementShortName">A3[5:0]</obj_property>
-      <obj_property name="ObjectShortName">A3[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/WD3" type="array">
-      <obj_property name="ElementShortName">WD3[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WD3[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/WE3" type="logic">
-      <obj_property name="ElementShortName">WE3</obj_property>
-      <obj_property name="ObjectShortName">WE3</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/ALUResult" type="array">
+   <wvobject fp_name="/CoreTest/ALUResult" type="array">
       <obj_property name="ElementShortName">ALUResult[31:0]</obj_property>
       <obj_property name="ObjectShortName">ALUResult[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/MemoryOut" type="array">
-      <obj_property name="ElementShortName">MemoryOut[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MemoryOut[31:0]</obj_property>
+   <wvobject fp_name="/CoreTest/MemoryWrite" type="array">
+      <obj_property name="ElementShortName">MemoryWrite[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MemoryWrite[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/CPU/SRCA" type="array">
-      <obj_property name="ElementShortName">SRCA[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SRCA[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/SRCB" type="array">
-      <obj_property name="ElementShortName">SRCB[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SRCB[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/CPU/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject fp_name="/CoreTest/MemoryRead" type="array">
+      <obj_property name="ElementShortName">MemoryRead[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MemoryRead[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

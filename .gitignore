@@ -40,3 +40,4 @@ CompuTED.hw/CompuTED.lpr
 CompuTED.runs/synth_1/__synthesis_is_complete__
 *.db
 *.rpx
+CompuTED.runs/impl_1/Core.vdi
